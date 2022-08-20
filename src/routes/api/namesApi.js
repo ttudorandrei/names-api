@@ -6,15 +6,17 @@ const writeToDB = require("../../utils/writeToDB");
 
 const router = Router();
 
+// get all names
 router.get("/", (req, res) => {
-  // get data from the db.json
   const names = getFromDB();
 
   res.json(names);
 });
 
+// get one name by id
 router.get("/:id", (req, res) => {});
 
+// add new name
 router.post("/", (req, res) => {
   const { body } = req;
   const id = v4();
@@ -32,8 +34,10 @@ router.post("/", (req, res) => {
   res.json({ message: "Success" });
 });
 
+// update a name
 router.put("/:id", () => {});
 
+// delete a name
 router.delete("/:id", () => {});
 
 module.exports = router;
